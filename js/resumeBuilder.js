@@ -1,18 +1,17 @@
 
 var bio = {
-	"name" : "Jose López",
+	"name" : "Vivekananthan Dhanasekaran",
 	"role" : "Software Developer",
 	"contacts" : {
-		"mobile" : "650-55-55-55-55",
-		"email" : "jmlb0003@jemail.com",
-		"github" : "https://github.com/Jamargle",
-		"twitter" : "https://twitter.com/jmlb0003",
-		"linkedin" : "https://es.linkedin.com/in/josemiguellopezbayona",
-		"location" : "Cambil"
+		"mobile" : "9940135998",
+		"email" : "vivekmit06@gmail.com",
+		"github" : "https://github.com/vdhanasekaran",		
+		"linkedin" : "https://www.linkedin.com/in/vivekananthan-dhanasekaran-612b2714",
+		"location" : "Chennai"
 	},
-	"welcomeMessage" : "Welcome to my first Javascript-created page",
-	"skills" : ["Java & Swing & Android", "C/C++", "SQL Databases", "UX & UI", "Javascript", "Software Engineering", "awesomeness"],
-	"bioPic" : "http://joselopez.hol.es/imagenes/yo.png"
+	"welcomeMessage" : "Full Stack Professional with Five (6+) years of experience in analysis, design, testing and deployment",
+	"skills" : [".NET", "C#", "MVC", "WebAPI", "Javascript", "Dependency injection Design pattern", "Unit Testing","Azure PaaS - App Service, WebJob, Storage Account", "SQL Server","Test Driven Development"],
+	"bioPic" : "https://scontent.fmaa1-1.fna.fbcdn.net/v/t1.0-9/39218_1235887197583_4704317_n.jpg?_nc_cat=0&oh=7f8c90319cc1c1aefd480abe78a5dffd&oe=5BF30E0B"
 };
 
 bio.display = function() {
@@ -28,15 +27,11 @@ bio.display = function() {
 	$("#topContacts").append(formattedEmail);
 	$("#footerContacts").append(formattedEmail);
 
-	var formattedGitHub = addHyperLink(HTMLgithub,bio.contacts.github,"Jamargle");
+	var formattedGitHub = addHyperLink(HTMLgithub,bio.contacts.github,"vdhanasekaran");
 	$("#topContacts").append(formattedGitHub);
 	$("#footerContacts").append(formattedGitHub);
 
-	var formattedTwitter = addHyperLink(HTMLtwitter,bio.contacts.twitter, "@jmlb0003");
-	$("#topContacts").append(formattedTwitter);
-	$("#footerContacts").append(formattedTwitter);
-
-	var formattedLinkedIn = addHyperLink(HTMLlinkedIn,bio.contacts.linkedin, "José Miguel López Bayona");
+	var formattedLinkedIn = addHyperLink(HTMLlinkedIn,bio.contacts.linkedin, "Vivekananthan");
 	$("#topContacts").append(formattedLinkedIn);
 	$("#footerContacts").append(formattedLinkedIn);
 
@@ -66,16 +61,22 @@ bio.display = function() {
 var work = {
 	"jobs": [
 		{
-			"employer" : "Universidad de Jáen",
-			"title" : "UJA Students virtual platform administrator",
-			"dates" : "July 2012 - February 2013",
-			"description" : "I was who create courses inside the platform and I help with technical support"
+			"employer" : "Prophoenix Corporation",
+			"title" : "Application Developer",
+			"dates" : "Nov 2016 - Present",
+			"description" : "Enhancing product framework by including new feature and I help with technical support"
 		},
 		{
-			"employer" : "Myself",
-			"title" : "Android developer",
-			"dates" : "July 2014 - July 2015",
-			"description" : "I created PIAR, an Augmented Reality browser for Android devices"
+			"employer" : "Accenture",
+			"title" : "Application Developer",
+			"dates" : "Feb 2013 - Nov 2016",
+			"description" : "Creating WCF and WebAPI for integating Banking product with third-party service"
+		},
+		{
+			"employer" : "HCL",
+			"title" : "Application Developer",
+			"dates" : "Nov 2010 - Jan 2013",
+			"description" : "Migrating VB applications to WPF application"
 		}
 	],
 	display() {
@@ -103,18 +104,31 @@ var work = {
 var projects = {
 	"projects": [
 		{
-			"title" : "PIAR (Augmented Reality)",
-			"dates" : "July 2014 - February 2015",
-			"description" : "PIAR is an Augmented Reality browser for Android devices",
-			"url" : "https://play.google.com/store/apps/details?id=com.jmlb0003.piar",
-			"images" : ""
+			"title" : "Bill Pay API",
+			"dates" : "Mar 2013 - July 2013",
+			"description" : "Creating integration API using WebAPI for communicating with third-party to support online bill pay and deplo to Azure PaaS (App Service)",
+			"Design Patterns" : "Dependency Injection",
+			"Approach" : "Test-Driven development",
+			".NET Framework version" : "4.0",
+			"Language" : "C#",
+			"Authentication" : "OAuth using Azure Active Directory"
 		},
 		{
-			"title" : "Página personal",
-			"dates" : "July 2013 - February 2014",
-			"description" : "Personal website like this but by the static way, with HTML5 and CSS only.",
-			"url" : "http://joselopez.hol.es",
-			"images" : ""
+			"title" : "Inventory API",
+			"dates" : "Apr 2016 - Nov 2016",
+			"description" : "Inventory API using ASP.NET WebAPI to fetch and update car details , schedule appointment for a website",
+			"Approach" : "Test-Driven development",
+			".NET Framework version" : "4.0",
+			"Language" : "C#",
+			"Authentication" : "OAuth using Azure Active Directory"
+		},
+		{
+			"title" : "Image Processing",
+			"dates" : "Apr 2016 - Nov 2016",
+			"description" : "Listen to queue for incoming images and insert into database using Azure WebJobs and Storage account",
+			"Approach" : "Test-Driven development",
+			".NET Framework version" : "4.0",
+			"Language" : "C#"
 		}
 	],
 	display() {
@@ -132,7 +146,7 @@ var projects = {
 				var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
 				$(".project-entry:last").append(formattedDescription);
 
-				if (projects.projects[project].images.length > 0) {
+				if (projects.projects[project].images != null && projects.projects[project].images != undefined && projects.projects[project].images.length > 0) {
 					for (image in projects.projects[project].images) {
 						var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[image]);
 						$(".project-entry:last").append(formattedImage);
@@ -147,56 +161,41 @@ var projects = {
 var education = {
 	"schools": [
 		{
-			"name" : "IES Sierra Mágina",
-			"location" : "Huelma, Jaén",
-			"degree" : "ESO & Bachillerato",
-			"majors" : ["Sciences"],
-			"dates" : 2006,
-			"url" : ""
+			"name" : "Anna University",
+			"location" : "Chennai",
+			"degree" : "Bachelor of Engineering",
+			"majors" : ["Computer Science"],
+			"dates" : 2010			
 		},
 		{
-			"name" : "Universidad de Jáen",
-			"location" : "Jaén",
-			"degree" : "Technical engineer",
-			"majors" : ["Computer Science"],
-			"dates" : 2012,
-			"url" : "http://ujaen.es"
+			"name" : "Ideal Higher Secondary School",
+			"location" : "Anthiyur",
+			"degree" : "Higher Secondary",
+			"majors" : ["Biology"],
+			"dates" : 2006			
 		},
 		{
-			"name" : "Universidad de Jáen",
-			"location" : "Jaén",
-			"degree" : "Engineer",
-			"majors" : ["Computer Science"],
-			"dates" : 2015,
-			"url" : "http://ujaen.es"
+			"name" : "St.Mary's and SSM school",
+			"location" : "Bhavani",
+			"degree" : "SSLC",
+			"majors" : ["Biology"],
+			"dates" : "2004"			
 		}
 		
 	]
 	,
 	"onlineCourses": [
 		{
-			"title" : "Analítica web",
-			"school" : "Actívate",
-			"dates" : 2014,
-			"url" : "https://www.google.com/landing/activate"
-		},
-		{
-			"title" : "HTML5, Javascript y node.js para aplicaciones web",
-			"school" : "Miriadax.net",
-			"dates" : 2015,
-			"url" : "https://www.miriadax.net/web/javascript-node-js"
-		},
-		{
-			"title" : "How to use Git and Github",
+			"title" : "Web Development",
 			"school" : "Udacity",
-			"dates" : 2015,
-			"url" : "https://www.udacity.com/course/ud775"
-		},
+			"dates" : 2018,
+			"url" : "https://www.youtube.com/playlist?list=PLAwxTw4SYaPlLXUhUNt1wINWrrH9axjcI"
+		},				
 		{
 			"title" : "Javascript Basics",
 			"school" : "Udacity",
-			"dates" : 2015,
-			"url" : "http://www.udacity.com/course/ud804"
+			"dates" : 2018,
+			"url" : "https://www.youtube.com/playlist?list=PLAwxTw4SYaPmtf5v3hefG5seVynUtV9T8"
 		}
 	],
 	display() {
@@ -276,6 +275,6 @@ function inName() {
   return name[0] + " " + name[1];
 }
 
-$("#main").append(internationalizeButton);
+//$("#main").append(internationalizeButton);
 
-$("#mapDiv").append(googleMap);
+//$("#mapDiv").append(googleMap);
